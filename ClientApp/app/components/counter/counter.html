@@ -1,0 +1,16 @@
+<template>
+    <h1>Counter</h1>
+
+    <p>This is a simple example of an Aurelia component.</p>
+
+    <p>Current count: <strong show.bind="isVisible">${currentCount}</strong></p>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-heading"><stromg>States</stromg></li>
+        <li class="list-group-item ">Counter visibility: <span class="label label-${isVisible?'info':'warning'}">${isVisible ? 'visible': 'hide'}</span></li>
+        <li class="list-group-item ">Button state: <span class="label label-${isEnabled?'success':'danger'}">${isEnabled ? 'enable': 'disable'}</span></li>
+    </ul>
+
+    <button class="btn btn-primary" disabled.bind="!canIncrement" click.delegate="incrementCounter()">Increment <span class="badge" >${currentCount}</span></button>
+    <button class="btn btn-${isVisible?'info':'warning'}" disabled.bind="!isEnabled" click.delegate="showCounter()">${isVisible?'Hide':'Show'}</button>
+    <button show.bind="isVisible" class="btn btn-${isEnabled?'success':'danger'}" click.delegate="enableButton()">${isEnabled ? 'Disable': 'Enable'}</button>
+</template>

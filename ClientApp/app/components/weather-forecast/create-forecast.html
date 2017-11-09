@@ -1,0 +1,32 @@
+﻿<template>
+    <h1>Create Weather forecast</h1>
+
+    <p>This component demonstrates how to post data to server</p>
+    <form  submit.delegate="save()" with.bind="weatherForecast">
+        <fieldset>
+            <div class="form-group">
+                <label>Date</label>
+                <input type="datetime" element.ref="$parent.datePicker" value.bind="dateFormatted" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>C°</label>
+                <input type="number" value.bind="temperatureC" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>F°</label>
+                <input type="number" value.bind="temperatureF" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Summary</label>
+                <textarea type="text" value.bind="summary" class="form-control"> </textarea>
+            </div>
+
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <button class="btn btn-danger" click.delegate="back()">Atras</button>
+                <button type="submit" disabled.bind="!canSave" class="btn btn-default">Save</button>
+            </div>
+        </fieldset>
+    </form>
+</template>
